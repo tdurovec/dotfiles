@@ -1,5 +1,4 @@
 :set number
-:set relativenumber
 :set autoindent
 :set tabstop=4
 :set shiftwidth=4
@@ -38,25 +37,11 @@ nnoremap  <Tab> :BufferNext<CR>
 nnoremap <silent>    <A-c> :BufferClose<CR>
 nnoremap <silent>    <A-p> :BufferPin<CR>
 
-nnoremap <A-j>    :resize -2<CR>
-nnoremap <A-k>    :resize +2<CR>
-nnoremap <A-h>    :vertical resize -2<CR>
-nnoremap <A-l>    :vertical resize +2<CR>
-
-nnoremap <A-q> :q <CR>
-
 nnoremap <C-l> e
 nnoremap <C-h> b
 
 vnoremap <C-l> e
 vnoremap <C-h> b
-
-noremap <C-y> v
-
-noremap <C-j> 5j
-noremap <C-k> 5k
-
-vnoremap <C-y> "+y
 
 function! s:check_back_space() abort
   let col = col('.') - 1
