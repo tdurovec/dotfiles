@@ -9,5 +9,5 @@ Vagrant.configure("2") do |config|
   config.vm.network "public_network"
   config.ssh.forward_agent = true
   config.vm.provision :shell, :inline => "sudo sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config; sudo systemctl restart sshd;", run: "always"
-
+  config.vm.provision :shell, :path => "bootstrap.sh"
 end
