@@ -1,9 +1,9 @@
-:set number
-:set autoindent
-:set tabstop=4
-:set shiftwidth=4
-:set smarttab
-:set softtabstop=4
+set number
+set autoindent
+set tabstop=4
+set shiftwidth=4
+set smarttab
+set softtabstop=4
 call plug#begin()
 
 Plug 'https://github.com/preservim/nerdtree' 
@@ -12,11 +12,12 @@ Plug 'kien/ctrlp.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'romgrk/barbar.nvim'
 Plug 'https://github.com/ryanoasis/vim-devicons'
 Plug 'alvan/vim-closetag'
 Plug 'https://github.com/folke/tokyonight.nvim.git'
-
+Plug 'caenrique/nvim-toggle-terminal'
+Plug 'voldikss/vim-floaterm'
+Plug 'tpope/vim-commentary'
 set encoding=UTF-8
 
 call plug#end()
@@ -32,27 +33,25 @@ vmap <S-Tab> <gv
 
 nnoremap <C-s> :w <CR>
 
-nnoremap  <S-Tab> :BufferPrevious<CR>
-nnoremap  <Tab> :BufferNext<CR>
-nnoremap <silent>    <A-c> :BufferClose<CR>
-nnoremap <silent>    <A-p> :BufferPin<CR>
+nnoremap <silent> <C-z> :ToggleTerminal<Enter>
+tnoremap <silent> <C-z> <C-\><C-n>:ToggleTerminal<Enter>
 
-nnoremap <C-l> e
+nnoremap  <M-m> :FloatermNew<CR>
+tnoremap  <M-m> <C-\><C-n>:FloatermNew<CR>
+
+tnoremap  <M-1> <C-\><C-n> :FloatermToggle<CR>
+nnoremap  <M-1> :FloatermToggle<CR>
+
+tnoremap   <left>   <C-\><C-n>:FloatermPrev<CR>
+tnoremap   <right>   <C-\><C-n>:FloatermNext<CR>
+
+nnorema <C-l> e
 nnoremap <C-h> b
 
 vnoremap <C-l> e
 vnoremap <C-h> b
 
-function! s:check_back_space() abort
-  let col = col('.') - 1
 
-    return !col || getline('.')[col - 1]  =~ '\s'
-endfunction
-
-inoremap <silent><expr> <Tab>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<Tab>" :
-      \ coc#refresh()
 hi Pmenu ctermbg=darkgrey ctermfg=white
 
 
@@ -66,3 +65,6 @@ syntax on
 colorscheme tokyonight 
 filetype on
 filetype plugin indent on
+
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
