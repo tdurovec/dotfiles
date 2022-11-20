@@ -36,6 +36,7 @@ vmap <Tab> >gv
 vmap <S-Tab> <gv
 
 nnoremap <C-s> :w <CR>
+vnoremap <C-c> "+y
 
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <C-p>Telescope buffers<cr>
@@ -43,7 +44,7 @@ nnoremap <C-p>Telescope buffers<cr>
 nnoremap <silent> <C-z> :ToggleTerminal<Enter>
 tnoremap <silent> <C-z> <C-\><C-n>:ToggleTerminal<Enter>
 
-nnorema <C-l> e
+nnoremap <C-l> e
 nnoremap <C-h> b
 
 vnoremap <C-l> e
