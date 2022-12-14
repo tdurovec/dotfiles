@@ -11,3 +11,4 @@ Vagrant.configure("2") do |config|
   config.vm.provision :shell, :inline => "sudo sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config; sudo systemctl restart sshd;", run: "always"
   config.vm.provision :shell, :path => "bootstrap.sh"
 end
+config.vm.network "public_network", bridge: 'wlp0s20f3', ip: "192.168.1.201"
