@@ -1,4 +1,37 @@
 {
+    "workbench.colorTheme": "Ayu Mirage",
+    "editor.minimap.enabled": false,
+    "editor.renderWhitespace": "none",
+    "workbench.startupEditor": "none",
+    "workbench.activityBar.location": "hidden",
+
+
+    "files.autoSave": "onFocusChange",
+    "vim.easymotion": true,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    "vim.sneak": true,
+
+    "vim.handleKeys": {
+        "<C-p>": false
+    },
+
+    "vim.visualModeKeyBindings": [
+        {
+            "before": ["Tab"],
+            "after": [">", "g", "v"]
+        },
+        {
+            "before": ["<S-Tab>"],
+            "after": ["<", "g", "v"]
+        }
+    ],
+}
+
+
+{
     "tabnine.experimentalAutoImports": true,
     "workbench.colorTheme": "Ayu Mirage",
     "editor.minimap.enabled": false,
@@ -65,4 +98,3 @@
     ],
     "editor.renderControlCharacters": false
 }
-
