@@ -15,7 +15,8 @@
     "vim.sneak": true,
 
     "vim.handleKeys": {
-        "<C-p>": false
+        "<C-p>": false,
+        "<C-b>": false
     },
 
     "vim.visualModeKeyBindings": [
