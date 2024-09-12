@@ -4,8 +4,6 @@
     "editor.renderWhitespace": "none",
     "workbench.startupEditor": "none",
     "workbench.activityBar.location": "hidden",
-
-
     "files.autoSave": "onFocusChange",
     "vim.easymotion": true,
     "vim.incsearch": true,
@@ -16,7 +14,8 @@
 
     "vim.handleKeys": {
         "<C-p>": false,
-        "<C-b>": false
+        "<C-b>": false,
+        "<C-f>": false
     },
 
     "vim.visualModeKeyBindings": [
